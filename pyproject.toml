@@ -1,0 +1,6 @@
+[project]
+name = "skin-fetch-server"
+version = "1.0.0"
+dependencies = [
+    "flask",
+]
