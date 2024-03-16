@@ -33,3 +33,12 @@ def find(skin):
     if not os.path.isfile(os.path.join(app.root_path, skin)):
         return not_found(skin)
     return send_file(skin)
+
+@app.route("/fix/<skin>")
+def find_fixed(skin):
+    if not skin.endswith(".png"):
+        skin += ".png"
+    skin = os.path.join("skins_fixed/" + skin)
+    if not os.path.isfile(os.path.join(app.root_path, skin)):
+        return not_found(skin)
+    return send_file(skin)
