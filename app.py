@@ -19,15 +19,13 @@ def list():
         count=len(files), list=("<br>").join(sorted(files))
     )
 
-
 @app.route("/about")
 def about():
     return info() + "<p>Submit new skins via. email (ewangreen95@gmail.com) or Discord (mpft)"
 
 @app.route("/")
 def info():
-    return "<p>Search for a skin by providing a filename.</p>"
-
+    return "<p>Search for a skin by providing a filename.</p><p>Submit new skins via. email (<a href="mailto://ewangreen95@gmail.com">ewangreen95@gmail.com</a>) or Discord (mpft)</p>"
 
 @app.route("/<skin>")
 def find(skin):
