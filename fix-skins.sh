@@ -24,7 +24,7 @@ for i in "${skins[@]}"; do
 	status=$?
 #	echo "$i" "$SCRIPT_DIR/skins_fixed/$(basename "$i")"
 	if [ ! -f "$SCRIPT_DIR/skins_fixed/$(basename "$i")" ]; then
-		if (( status || "${size[0]}" % 8 || "${size[1]}" % 8 )); then
+		if (( status || "${size[0]}" % 8 || "${size[1]}" % 4 )); then
                         echo "Fixing skin $(basename "$i")"
                         "$SCRIPT_DIR/fix-skin/build/fix-skin" "$i" "$SCRIPT_DIR/skins_fixed/$(basename "$i")"
 		else
